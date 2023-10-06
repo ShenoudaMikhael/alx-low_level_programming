@@ -19,13 +19,16 @@ int main(void)
     while (i < 58)
     {
         i2 = 48;
+       
         while (i2 < 58)
         {
-            i3 = 48;
+            
+            i3 = i;
+            i4 = i2+1;
             while (i3 < 58)
             {
 
-                i4 = 48;
+                 
                 while (i4 < 58)
                 {
                     putchar((char)i);
