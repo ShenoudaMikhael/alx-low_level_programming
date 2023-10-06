@@ -11,44 +11,25 @@
  */
 int main(void)
 {
-    int i, i2, i3, i4;
-    i = 48;
-    i2 = 48;
-    i3 = 48;
-    i4 = 48;
-    
-    while (i < 58)
+    int num1, num2;
+    num1 = 0;
+    num2 = 0;
+    while (num1 <= 98)
     {
-        i2 = 48;
-        while (i2 < 58)
-        {
-            i3 = i;
-            i4 = i2 + 1;
-            while (i3 < 58)
-            {
-                while (i4 < 58)
-                {
-                    putchar((char)i);
-                    putchar((char)i2);
-                    putchar((char)32);
-                    putchar((char)i3);
-                    putchar((char)i4);
+        
+        
+            putchar((num1 / 10) + '0');
+            putchar((num1 % 10) + '0');
+            putchar(' ');
+            putchar((num2 / 10) + '0');
+            putchar((num2 % 10) + '0');
+            putchar(',');
+            putchar(' ');
+            num2++;
+        
 
-                    if (!(i == 57 && i2 == 56 && i3 == 57 && i4 == 57))
-                    {
-                        putchar((char)44);
-                        putchar((char)32);
-                    }
-                    
-                    i4++;
-                }
-                i3++;
-            }
-            i2++;
-        }
-        i++;
+        num1++;
     }
 
-    putchar('\n');
     return 0;
 }
