@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
 #include <stdio.h>
 /* more headers goes there */
 /* betty style doc for function main goes there */
@@ -12,16 +9,16 @@
 int main(void)
 {
 
-    int i;
-    i = 48;
+int i;
+i = 48;
 
-    while (i < 58)
-    {
-        /* code */
+while (i < 58)
+{
+/* code */
 
-        putchar((char) i);
-        i++;
-    }
-    putchar('\n');
-    return (0);
+putchar((char) i);
+i++;
+}
+putchar('\n');
+return (0);
 }
