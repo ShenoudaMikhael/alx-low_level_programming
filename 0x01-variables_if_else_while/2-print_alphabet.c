@@ -17,6 +17,7 @@ char letters[26] = {
 't', 'u', 'v', 'w', 'x', 'y', 'z'
 };
 int i;
+i = 0;
 
 while (i < 26)
 {
