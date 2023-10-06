@@ -16,19 +16,16 @@ int main(void)
     i2 = 48;
     i3 = 48;
     i4 = 48;
+    
     while (i < 58)
     {
         i2 = 48;
-       
         while (i2 < 58)
         {
-            
             i3 = i;
-            i4 = i2+1;
+            i4 = i2 + 1;
             while (i3 < 58)
             {
-
-                 
                 while (i4 < 58)
                 {
                     putchar((char)i);
@@ -36,14 +33,14 @@ int main(void)
                     putchar((char)32);
                     putchar((char)i3);
                     putchar((char)i4);
-                    i4++;
 
-                    if (i == 57 && i2 == 56 && i3 == 57 && i4 == 58)
+                    if (!(i == 57 && i2 == 56 && i3 == 57 && i4 == 57))
                     {
-                        continue;
+                        putchar((char)44);
+                        putchar((char)32);
                     }
-                    putchar((char)44);
-                    putchar((char)32);
+                    
+                    i4++;
                 }
                 i3++;
             }
@@ -53,5 +50,5 @@ int main(void)
     }
 
     putchar('\n');
-    return (0);
+    return 0;
 }
