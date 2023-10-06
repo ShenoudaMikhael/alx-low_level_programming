@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdio.h>
 /* more headers goes there */
-
 /* betty style doc for function main goes there */
 /**
  * main - Entry point
@@ -12,12 +11,19 @@
  */
 int main(void)
 {
-    char letters[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    for (size_t i = 0; i < 26; i++)
-    {
-        /* code */
-        putchar(letters[i]);
-    }
-    putchar('\n');
-    return (0);
+char letters[26] = {
+'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'
+, 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+'t', 'u', 'v', 'w', 'x', 'y', 'z'
+};
+int i;
+
+while (i < 26)
+{
+/* code */
+putchar(letters[i]);
+i++;
+}
+putchar('\n');
+return (0);
 }
