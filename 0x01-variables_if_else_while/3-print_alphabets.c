@@ -21,6 +21,15 @@ while (i < 123)
 putchar((char) i);
 i++;
 }
+
+i = 65;
+
+while (i < 91)
+{
+/* code */
+putchar((char) i);
+i++;
+}
 putchar('\n');
 return (0);
 }
