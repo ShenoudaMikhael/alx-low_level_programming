@@ -3,8 +3,8 @@
 
 /* betty style doc for function main goes there */
 /**
- * _isalpha - Entry point
- * @c: the character to check
+ * print_sign - Entry point
+ * @n: the character to check
  *
  * Return: Always Void (Success)
  */
