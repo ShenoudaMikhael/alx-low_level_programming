@@ -3,7 +3,7 @@
 
 /* betty style doc for function main goes there */
 /**
- * print_sign - Entry point
+ * _abs - Entry point
  * @n: the character to check
  *
  * Return: Always Void (Success)
