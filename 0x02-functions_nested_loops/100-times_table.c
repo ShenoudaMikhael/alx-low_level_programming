@@ -50,7 +50,7 @@ void print_times_table(int n)
                 _putchar(' ');
             }
             _putchar(l + '0');
-            if (h2 < n+1)
+            if (h2 < n)
             {
                 _putchar(',');
                 _putchar(' ');
