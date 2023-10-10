@@ -9,20 +9,20 @@
  */
 int main(void)
 {
-    int i;
-     
-    char c[]= { '_', 'p', 'u', 't', 'c', 'h', 'a', 'r','\n' };
+int i;
 
-    i = 0;
-    
-    
-     while (i < 9)
-    {
-        /* code */
-        _putchar(c[i]);
+char c[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r', '\n'};
 
-        i++;
-    }
+i = 0;
 
-    return (0);
+
+while (i < 9)
+{
+/* code */
+_putchar(c[i]);
+
+i++;
+}
+
+return (0);
 }
