@@ -28,18 +28,11 @@ void print_times_table(int n)
         h2 = 0;
         while (h2 < n + 1)
         {
-            ll = ((h1)*h2) / 100;
+           
             l = ((h1)*h2) % 10;
             f = ((h1)*h2) / 10;
 
-            if (ll != 0)
-            {
-                _putchar(ll + '0');
-            }
-            else
-            {
-                _putchar(' ');
-            }
+           
 
             if (f != 0 || ll > 0)
             {
