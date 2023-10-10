@@ -9,29 +9,29 @@
  */
 void jack_bauer(void)
 {
-    int h1, h2;
+int h1, h2;
 
-    h1 = 0;
-    h2 = 0;
+h1 = 0;
+h2 = 0;
 
-    while (h1 < 24)
-    {
-        h2 = 0;
-        while (h2 < 60)
-        {
+while (h1 < 24)
+{
+h2 = 0;
+while (h2 < 60)
+{
 
-            _putchar(h1 / 10 + '0');
-            _putchar(h1 % 10 + '0');
-            _putchar(':');
-            _putchar(h2 / 10 + '0');
-            _putchar(h2 % 10 + '0');
-            _putchar('\n');
-            h2++;
-        }
+_putchar(h1 / 10 + '0');
+_putchar(h1 % 10 + '0');
+_putchar(':');
+_putchar(h2 / 10 + '0');
+_putchar(h2 % 10 + '0');
+_putchar('\n');
+h2++;
+}
 
-        h1++;
-    }
+h1++;
+}
 
 
-    return;
+return;
 }
