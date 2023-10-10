@@ -8,15 +8,24 @@
 int add(int a, int b)
 {
 int sum;
-int f, l;
+int f, m, l;
 
 sum = a + b;
 
-f = sum / 10;
+f = sum / 100;
+m = (sum / 10) % 10;
 l = sum % 10;
 
-_putchar(f+'0');
-_putchar(l+'0');
+if (f != 0)
+{
+_putchar(f + '0');
+}
+if (f != 0 && m != 0)
+{
+_putchar(m + '0');
+}
+
+_putchar(l + '0');
 _putchar('\n');
 
 return (0);
