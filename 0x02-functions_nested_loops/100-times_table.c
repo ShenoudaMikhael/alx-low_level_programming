@@ -16,6 +16,7 @@ void print_times_table(int n)
     int l;
     int ll;
 
+    ll = 0;
     if (n < 0 || n > 15)
     {
         return;
@@ -28,11 +29,16 @@ void print_times_table(int n)
         h2 = 0;
         while (h2 < n + 1)
         {
-           
+            if ((h1*h2) > 99)
+            {
+                ll = ((h1 * h2) / 10) % 10;
+            }else{
+                ll =0;
+            }
             l = ((h1)*h2) % 10;
             f = ((h1)*h2) / 10;
 
-            if (ll != 0)
+            if (ll != 0 && (h1*h2 > 99))
             {
                 _putchar(ll + '0');
             }
