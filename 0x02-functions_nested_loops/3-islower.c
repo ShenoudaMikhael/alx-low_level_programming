@@ -4,9 +4,8 @@
 /* betty style doc for function main goes there */
 /**
  * _islower - Entry point
- * 
- * @param: c the character to check
- * 
+ * @c: the character to check
+ *
  * Return: Always Void (Success)
  */
 int _islower(int c)
