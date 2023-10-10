@@ -9,17 +9,17 @@
  */
 int print_alphabet(void)
 {
-    int i;
+int i;
 
-    i = 97;
+i = 97;
 
-    while (i < 123)
-    {
-        /* code */
-        _putchar(i);
+while (i < 123)
+{
+/* code */
+_putchar(i);
 
-        i++;
-    }
-    _putchar('\n');
-    return (0);
+i++;
+}
+_putchar('\n');
+return (0);
 }
