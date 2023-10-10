@@ -3,8 +3,8 @@
 
 /* betty style doc for function main goes there */
 /**
- * print_alphabet_x10 - Entry point
- *
+ * _islower - Entry point
+ * int c: the character to check
  * Return: Always Void (Success)
  */
 int _islower(int c)
