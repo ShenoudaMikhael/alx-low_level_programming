@@ -9,9 +9,9 @@
 int main(void)
 {
     int i = 1;
-    int i2 = 0;
-    int i3 = 1;
-    int sum = 0;
+    long i2 = 0;
+    long i3 = 1;
+    long sum = 0;
 
     while (i < 51)
     {
