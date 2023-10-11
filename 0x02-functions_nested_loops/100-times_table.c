@@ -1,11 +1,34 @@
 #include "main.h"
 #include <stdio.h>
-/* more headers goes there */
+/**
+ * les_than_h - Entry point
+ * @result: result
+ * Return: Always void (Success)
+ */
+void les_than_h(int result)
+{
+_putchar(' ');
+_putchar((result / 10) + '0');
+_putchar((result % 10) + '0');
+return;
+}
+/**
+ * more_than_h - Entry point
+ * @result: result
+ * Return: Always void (Success)
+ */
+void more_than_h(int result)
+{
+_putchar((result / 100) + '0');
+_putchar(((result / 10) % 10) + '0');
+_putchar((result % 10) + '0');
 
-/* betty style doc for function main goes there */
+return;
+}
+
 /**
  * print_times_table - Entry point
- *
+ * @n: number to time
  * Return: Always void (Success)
  */
 void print_times_table(int n)
@@ -21,7 +44,7 @@ while (c <= n)
 r = 0;
 while (r <= n)
 {
-result = c * r;
+result = c *r;
 if (result < 10)
 {
 if (r != 0)
@@ -33,15 +56,11 @@ _putchar(result + '0');
 }
 else if (result < 100)
 {
-_putchar(' ');
-_putchar((result / 10) + '0');
-_putchar((result % 10) + '0');
+les_than_h(result);
 }
 else
 {
-_putchar((result / 100) + '0');
-_putchar(((result / 10) % 10) + '0');
-_putchar((result % 10) + '0');
+more_than_h(result);
 }
 if (r < n)
 {
