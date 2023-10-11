@@ -35,8 +35,12 @@ _putchar(' ');
 
 if (result < 10)
 {
+if (r != 0)
+{
 _putchar(' ');
 _putchar(' ');
+}
+
 _putchar(result + '0');
 }
 else if (result < 100)
