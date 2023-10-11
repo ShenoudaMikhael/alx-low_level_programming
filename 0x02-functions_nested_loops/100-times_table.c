@@ -10,64 +10,53 @@
  */
 void print_times_table(int n)
 {
+int c;
+int r;
+if (n < 0 || n > 15)
+{
+return;
+}
 
-    int h1, h2;
-    int f;
-    int l;
-    int ll;
+c = 0;
 
-    ll = 0;
-    if (n < 0 || n > 15)
-    {
-        return;
-    }
+while (c <= n)
+{
+r = 0;
 
-    h1 = 0;
-    while (h1 < n + 1)
-    {
+while (r <= n)
+{
+int result = c * r;
 
-        h2 = 0;
-        while (h2 < n + 1)
-        {
-            if ((h1*h2) > 99)
-            {
-                ll = ((h1 * h2) / 10) % 10;
-            }else{
-                ll =0;
-            }
-            l = ((h1)*h2) % 10;
-            f = ((h1)*h2) / 10;
+if (r != 0)
+{
+_putchar(',');
+_putchar(' ');
+}
 
-            if (ll != 0 && (h1*h2 > 99))
-            {
-                _putchar(ll + '0');
-            }
-            else if (h2!=0)
-            {
-                _putchar(' ');
-            }
+if (result < 10)
+{
+_putchar(' ');
+_putchar(' ');
+_putchar(result + '0');
+}
+else if (result < 100)
+{
+_putchar(' ');
+_putchar((result / 10) + '0');
+_putchar((result % 10) + '0');
+}
+else
+{
+_putchar((result / 100) + '0');
+_putchar(((result / 10) % 10) + '0');
+_putchar((result % 10) + '0');
+}
 
-            if (f != 0 || ll > 0)
-            {
-                _putchar(f + '0');
-            }
-            else if (h2 != 0)
-            {
-                _putchar(' ');
-            }
-            _putchar(l + '0');
-            if (h2 < n)
-            {
-                _putchar(',');
-                _putchar(' ');
-            }
+r++;
+}
 
-            h2++;
-        }
-
-        h1++;
-        _putchar('\n');
-    }
-
-    return;
+_putchar('\n');
+c++;
+}
+return;
 }
