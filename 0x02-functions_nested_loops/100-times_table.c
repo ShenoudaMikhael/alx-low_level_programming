@@ -42,7 +42,7 @@ void print_times_table(int n)
             {
                 _putchar(ll + '0');
             }
-            else if (h1!=0)
+            else if (h2!=0)
             {
                 _putchar(' ');
             }
