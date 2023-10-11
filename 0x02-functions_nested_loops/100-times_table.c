@@ -4,7 +4,7 @@
 
 /* betty style doc for function main goes there */
 /**
- * times_table - Entry point
+ * print_times_table - Entry point
  *
  * Return: Always void (Success)
  */
