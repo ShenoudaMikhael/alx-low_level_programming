@@ -18,7 +18,7 @@ int main(void)
         sum = i2 + i3;
         i2 = i3;
         i3 = sum;
-        printf("%d", sum);
+        printf("%ld", sum);
         if (i == 50)
         {
             printf("\n");
