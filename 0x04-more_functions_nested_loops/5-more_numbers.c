@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * more_numbers - print numbers from 0 : 14
  * Return: None
