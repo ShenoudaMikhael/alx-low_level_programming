@@ -6,22 +6,30 @@
 int main(void)
 {
 long int v;
-long int i, f;
+long int i, max;
 
-i = 1;
-f = 100;
+max = -1;
 v = 612852475143;
+i = 2;
 
-while (i < f)
+while (v != 0)
 {
-if (v % i == 0)
+if (v % i != 0)
 {
-f = v / i;
-
-}
-
 i++;
 }
-printf("%ld\n", f);
+else
+{
+max = v;
+
+v /= i;
+if (v == 1)
+{
+printf("%ld\n", max);
+break;
+}
+}
+}
+
 return 0;
 }
