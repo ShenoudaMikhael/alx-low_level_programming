@@ -1,14 +1,13 @@
 #include "main.h"
 /**
- * print_number - print int
- * @n: int to print
- *
- * Return: Always 0.
- */
+* print_number - print int
+* @n: int to print
+*
+* Return: none.
+*/
 void print_number(int n)
 {
-int rtl;
-int d;
+int d, rtl;
 
 if (n < 0)
 {
@@ -18,7 +17,7 @@ n = -n;
 
 if (n == 0)
 {
-_putchar('0');
+_putchar(48);
 return;
 }
 
@@ -36,5 +35,4 @@ d = rtl % 10;
 _putchar('0' + d);
 rtl /= 10;
 }
-
 }
