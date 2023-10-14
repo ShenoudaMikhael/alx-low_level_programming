@@ -31,7 +31,7 @@ if (d == 0 && rtl == 0)
 {
 zero++;
 }
-if (d > 2 && d <= 9 && rtl == 0)
+if (d > 1 && d <= 9 && rtl == 0)
 {
 
 overflow = d;
@@ -58,8 +58,6 @@ rtl /= 10;
 }
 settle_zeros(zero);
 }
-
-
 
 /**
  * print_number - print int
