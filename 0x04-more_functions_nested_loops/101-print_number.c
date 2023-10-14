@@ -1,4 +1,19 @@
 #include "main.h"
+
+/**
+ * settle_zeros - print n zeros
+ * @zero: number of zeros to print
+ * Return: none
+ */
+void settle_zeros(int zero)
+{
+while (zero > 0)
+{
+_putchar('0');
+zero--;
+}
+}
+
 /**
  * rev_print - reverse and print numbers taking
  * in account the limit of int variable
@@ -44,19 +59,7 @@ rtl /= 10;
 settle_zeros(zero);
 }
 
-/**
- * settle_zeros - print n zeros
- * @zero: number of zeros to print
- * Return: none
- */
-void settle_zeros(int zero)
-{
-while (zero > 0)
-{
-_putchar('0');
-zero--;
-}
-}
+
 
 /**
  * print_number - print int
