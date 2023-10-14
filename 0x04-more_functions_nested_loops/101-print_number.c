@@ -7,7 +7,6 @@
  */
 void print_number(int n)
 {
-
 int d, rtl, zero, negative;
 
 zero = 0;
@@ -23,7 +22,6 @@ else if (n == 0)
 _putchar('0');
 return;
 }
-
 if (negative == 1)
 {
 _putchar('-');
@@ -48,6 +46,5 @@ while (zero > 0)
 {
 _putchar('0');
 zero--;
-
 }
 }
