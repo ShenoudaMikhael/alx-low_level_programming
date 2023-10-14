@@ -36,7 +36,7 @@ zero++;
 rtl = rtl * 10 + d;
 n = n / 10;
 }
-while (rtl > 0)
+while (rtl != 0)
 {
 d = rtl % 10;
 _putchar('0' + d);
