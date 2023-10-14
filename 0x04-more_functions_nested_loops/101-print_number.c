@@ -8,34 +8,46 @@
 void print_number(int n)
 {
 
-int d, rtl, n, zero;
+    int d, rtl, zero, negative;
 
-n = 2102;
-zero = 0;
-rtl = 0;
-while (n > 0)
-{
-d = n % 10;
-if (d == 0 && rtl == 0)
-{
-zero++;
-}
-rtl = rtl * 10 + d;
-n = n / 10;
-printf("d:%d - rtl:%d - n:%d \n", d, rtl, n);
-}
-while (rtl > 0)
-{
-d = rtl % 10;
-putchar('0' + d);
-rtl /= 10;
-}
-while (zero > 0)
-{
-putchar('0');
-zero--;
-/* code */
-}
+    zero = 0;
+    rtl = 0;
+    negative = 0;
+    if (n < 0)
+    {
+        negative = 1;
+        n *= -1;
+    }
+    else if (n == 0)
+    {
+        _putchar('0');
+        return;
+    }
 
-printf("\n");
+    if (negative == 1)
+    {
+        _putchar('-');
+    }
+    while (n > 0)
+    {
+        d = n % 10;
+        if (d == 0 && rtl == 0)
+        {
+            zero++;
+        }
+        rtl = rtl * 10 + d;
+        n = n / 10;
+    }
+    while (rtl > 0)
+    {
+        d = rtl % 10;
+        _putchar('0' + d);
+        rtl /= 10;
+    }
+    while (zero > 0)
+    {
+        _putchar('0');
+        zero--;
+        /* code */
+    }
 }
