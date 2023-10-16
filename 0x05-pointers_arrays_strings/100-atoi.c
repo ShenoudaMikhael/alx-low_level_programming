@@ -13,13 +13,14 @@ int _atoi(char *s)
     neg = 1;
     while (s[i] != '\0')
     {
-        if (s[i] >= 48 && s[i] <= 57)
-        {
-            if (s[i - 1] == 45)
+        if (s[i - 1] == 45)
             {
            
-                neg = -1;
+                neg *= -1;
             }
+        if (s[i] >= 48 && s[i] <= 57)
+        {
+            
             num *= 10;
             num += s[i] - 48;
         }
