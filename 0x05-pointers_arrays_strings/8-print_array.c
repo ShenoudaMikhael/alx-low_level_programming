@@ -17,9 +17,9 @@ printf("%d", a[i]);
 i++;
 if (i == n)
 {
-printf("\n");
 break;
 }
 printf(", ");
 }
+printf("\n");
 }
