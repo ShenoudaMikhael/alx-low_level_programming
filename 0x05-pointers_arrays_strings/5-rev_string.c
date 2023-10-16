@@ -16,7 +16,10 @@ void rev_string(char *s)
     {
         i++;
     }
-    i--;
+    if (i > 0)
+    {
+        i--;
+    }
     f = i;
     while (i != f / 2)
     {
