@@ -8,7 +8,7 @@ int main()
 {
     int i;
     i = 0;
-    while (i < INT_MAX)
+    while (i < 10)
     {
         printf("%d", i);
         i++;
