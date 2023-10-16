@@ -7,30 +7,30 @@
  */
 int _atoi(char *s)
 {
-    int i, num, neg;
-    i = 0;
-    num = 0;
-    neg = 1;
-    while (s[i] != '\0')
-    {
-        if (s[i - 1] == 45)
-        {
+int i, num, neg;
+i = 0;
+num = 0;
+neg = 1;
+while (s[i] != '\0')
+{
+if (s[i - 1] == 45)
+{
 
-            neg *= -1;
-        }
-        if (s[i] >= 48 && s[i] <= 57)
-        {
+neg *= -1;
+}
+if (s[i] >= 48 && s[i] <= 57)
+{
 
-            num *= 10;
-            num += s[i] - 48;
-        }
-        else if (num != 0)
-        {
-            break;
-        }
+num *= 10;
+num = num + ((s[i] - 48) * neg);
+}
+else if (num != 0)
+{
+break;
+}
 
-        i++;
-    }
+i++;
+}
 
-    return (num * neg);
+return (num);
 }
