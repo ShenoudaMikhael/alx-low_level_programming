@@ -20,6 +20,10 @@ void puts_half(char *str)
     {
         h++;
     }
+    else
+    {
+        h += 2;
+    }
 
     while (h <= i)
     {
