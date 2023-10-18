@@ -1,0 +1,8 @@
+*
+
+
+!*.c 
+!main.h
+!.gitignore
+
+*-main.c
