@@ -14,7 +14,7 @@ i = 0;
 while (s[i] != '\n')
 {
 i2 = 0;
-while (s[i2] != '\0')
+while (ab[i2] != '\0')
 {
 if (s[i] == ab[i2])
 {
