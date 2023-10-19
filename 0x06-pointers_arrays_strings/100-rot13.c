@@ -11,7 +11,7 @@ char no[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 char ab[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 i = 0;
 
-while (s[i] != '\n')
+while (s[i] != '\0')
 {
 i2 = 0;
 while (ab[i2] != '\0')
