@@ -37,17 +37,16 @@ void print_number(int n)
         }
         n /= 10;
     }
-
-    while (rtl > 0)
-    {
-        d = rtl % 10;
-        _putchar('0' + d);
-        rtl /= 10;
-    }
     while (rtl2 > 0)
     {
         d = rtl2 % 10;
         _putchar('0' + d);
         rtl2 /= 10;
+    }
+    while (rtl > 0)
+    {
+        d = rtl % 10;
+        _putchar('0' + d);
+        rtl /= 10;
     }
 }
