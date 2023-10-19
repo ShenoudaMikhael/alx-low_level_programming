@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-    int d, rtl, rtl2;
+    unsigned int d, rtl;
 
     if (n < 0)
     {
@@ -22,27 +22,15 @@ void print_number(int n)
     }
 
     rtl = 0;
-    rtl2 = 0;
     while (n > 0)
     {
         d = n % 10;
-        if (rtl > 9999)
-        {
-            rtl2 = rtl2 * 10 + d;
-        }
-        else
-        {
 
-            rtl = rtl * 10 + d;
-        }
+        rtl = rtl * 10 + d;
+
         n /= 10;
     }
-    while (rtl2 > 0)
-    {
-        d = rtl2 % 10;
-        _putchar('0' + d);
-        rtl2 /= 10;
-    }
+
     while (rtl > 0)
     {
         d = rtl % 10;
