@@ -22,7 +22,7 @@ for (q = s; *q; q++)
 {
 if (*q == c)
 {
-return (q);
+return (q++);
 }
 }
 
