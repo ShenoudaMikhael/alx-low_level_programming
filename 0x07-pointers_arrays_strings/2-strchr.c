@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
  * _strchr - Returns a pointer to
  * the first occurrence of the character
@@ -15,10 +17,10 @@ while (*s)
 {
 if (s[0] == c)
 {
-return(s);
+return (s);
 }
 s++;
 }
 
-return (s);
+return (NULL);
 }
