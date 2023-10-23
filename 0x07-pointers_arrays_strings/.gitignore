@@ -5,6 +5,7 @@
 !*.c
 !main.h
 !.gitignore
+!README.md
 # ignore this
 *-main.c
 _putchar.c
