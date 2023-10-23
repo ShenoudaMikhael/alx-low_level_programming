@@ -12,19 +12,16 @@
  */
 char *_strchr(char *s, char c)
 {
-    char *q;
+char *q;
 
-    if (s == NULL)
-    {
-        return (NULL);
-    }
-    for (q = s; *q; q++)
-    {
-        if (*q == c)
-        {
-            break;
-        }
-    }
 
-    return (q);
+for (q = s; *q; q++)
+{
+if (*q == c)
+{
+return(q);
+}
+}
+
+return (NULL);
 }
