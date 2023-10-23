@@ -3,7 +3,7 @@
  * a prefix substring.
  * @s: char
  * @accept: string
- * Retirn: the number of bytes in the initial segment
+ * Return: the number of bytes in the initial segment
  * of s which consist only of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
