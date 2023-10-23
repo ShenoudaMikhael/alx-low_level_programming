@@ -18,11 +18,11 @@ if (s == NULL)
 {
 return (NULL);
 }
-for (q = s; *q; q++)
+for (q = s; q[0] != '\n'; q++)
 {
 if (*q == c)
 {
-return (q++);
+return (q);
 }
 }
 
