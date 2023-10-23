@@ -14,12 +14,11 @@ char *_strchr(char *s, char c)
 {
 char *q;
 
-
 for (q = s; *q; q++)
 {
 if (*q == c)
 {
-return(q);
+return (q);
 }
 }
 
