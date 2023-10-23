@@ -12,20 +12,19 @@
  */
 char *_strchr(char *s, char c)
 {
-char *q;
-q = s;
-if (s == NULL)
-{
-return (NULL);
-}
-while (*q)
-{
-if (*q == c)
-{
-break;
-}
-q++;
-}
+    char *q;
 
-return (q);
+    if (s == NULL)
+    {
+        return (NULL);
+    }
+    for (q = s; *q; q++)
+    {
+        if (*q == c)
+        {
+            break;
+        }
+    }
+
+    return (q);
 }
