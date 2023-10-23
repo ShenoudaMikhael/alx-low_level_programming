@@ -19,7 +19,7 @@ return NULL;
 }
 while (*s)
 {
-if (s[0] == c)
+if (*s == c)
 {
 q = s;
 break;
