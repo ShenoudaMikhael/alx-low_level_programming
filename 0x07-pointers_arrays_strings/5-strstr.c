@@ -35,7 +35,7 @@ return (haystack + i);
 
 i++;
 }
-if (haystack[i] == '\0' && i3 == 0)
+if (haystack[i] == '\0' && i2 == 0)
 {
 return (NULL);
 }
