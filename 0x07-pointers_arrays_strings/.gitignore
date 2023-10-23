@@ -1,0 +1,10 @@
+# ignore all
+*
+
+# don't ignore
+!*.c
+!main.h
+!.gitignore
+# ignore this
+*-main.c
+_putchar.c
