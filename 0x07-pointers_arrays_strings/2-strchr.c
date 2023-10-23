@@ -12,7 +12,7 @@
  */
 char *_strchr(char *s, char c)
 {
-
+char *q;
 if (s == NULL)
 {
 return NULL;
@@ -21,10 +21,11 @@ while (*s)
 {
 if (s[0] == c)
 {
-return (s);
+q = s;
+break;
 }
 s++;
 }
 
-return (NULL);
+return (q);
 }
