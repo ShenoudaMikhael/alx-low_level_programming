@@ -13,7 +13,7 @@ return (-1);
 }
 if (f > 0)
 {
-f = f * factorial(n - 1);
+f = f *factorial(n - 1);
 }
 if (f == 0)
 {
