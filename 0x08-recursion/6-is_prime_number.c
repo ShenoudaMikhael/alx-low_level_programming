@@ -18,7 +18,7 @@ else
 {
 return (1);
 }
-return _is_divisable(n, i + 1);
+return (_is_divisable(n, i + 1));
 }
 /**
  * is_prime_number - cheacks if
@@ -30,7 +30,7 @@ int is_prime_number(int n)
 {
 int res;
 res = 0;
-if (n <= 0 || n == 1 )
+if (n <= 0 || n == 1)
 {
 return (0);
 }
