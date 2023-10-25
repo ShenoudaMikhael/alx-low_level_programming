@@ -1,6 +1,7 @@
 *
 
 !*.c
+!main.h
 !.gitignore
 !README.md
 
