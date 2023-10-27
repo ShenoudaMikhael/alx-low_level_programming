@@ -1,33 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - prints the all args
- * @argc: int argument count
- * @argv: pointer arguments array
- * Return: 0 success
+ * check - takes total and cahnge
+ * @total: total value
+ * @change: change needed
+ * Return void
  */
-int main(int argc, char const *argv[])
+void check(int total, int change)
 {
-int total, change;
-total = 0;
-change = 0;
-
-if (argc != 2)
-{
-printf("Error\n");
-return (1);
-}
-
-total = atoi(argv[1]);
-if (total < 0)
-{
-printf("0\n");
-return (0);
-}
 while (total > 0)
 {
-
 if (total - 25 >= 0)
 {
 total -= 25;
@@ -59,8 +41,31 @@ change++;
 continue;
 }
 }
+}
 
+/**
+* main - prints the all args
+* @argc: int argument count
+* @argv: pointer arguments array
+* Return: 0 success
+*/
+int main(int argc, char const *argv[])
+{
+int total, change;
+total = 0;
+change = 0;
+if (argc != 2)
+{
+printf("Error\n");
+return (1);
+}
+total = atoi(argv[1]);
+if (total < 0)
+{
+printf("0\n");
+return (0);
+}
+check(total, change);
 printf("%d\n", change);
-
 return (0);
 }
