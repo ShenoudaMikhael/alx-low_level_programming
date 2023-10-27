@@ -18,7 +18,10 @@ if (atoi(argv[i]) == 0)
 printf("Error\n");
 return (1);
 }
-
+if (atoi(argv[i]) < 0)
+{
+continue;
+}
 total += atoi(argv[i]);
 }
 
