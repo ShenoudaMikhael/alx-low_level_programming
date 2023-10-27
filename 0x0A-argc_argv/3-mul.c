@@ -16,8 +16,8 @@ if (argc != 3)
 printf("Error\n");
 }
 else
-{ 
-total = atoi(argv[1]) * atoi(argv[2]); 
+{
+total = atoi(argv[1]) * atoi(argv[2]);
 printf("%d\n", total);
 }
 
