@@ -4,10 +4,11 @@
  * @argc: int argument count
  * @argv: pointer arguments array
  * Return: 0 success
-*/
+ */
 int main(int argc, char const *argv[])
 {
-printf("%s\n", argv[0]);
+
+printf("%s\n", argv[argc]);
 
 return (0);
 }
