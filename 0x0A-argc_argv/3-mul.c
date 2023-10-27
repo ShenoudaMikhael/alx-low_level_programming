@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
  * main - prints the all args
  * @argc: int argument count
@@ -7,16 +9,16 @@
  */
 int main(int argc, char const *argv[])
 {
-int multi;
+int total;
+total = 0;
 if (argc != 3)
 {
 printf("Error\n");
 }
 else
-{
-multi = 0;
-multi = (int) *argv[1] * (int) *argv[2];
-printf("%d\n", multi);
+{ 
+total = atoi(argv[1]) * atoi(argv[2]); 
+printf("%d\n", total);
 }
 
 return (0);
