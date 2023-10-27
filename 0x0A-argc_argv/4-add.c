@@ -9,19 +9,22 @@
  */
 int main(int argc, char const *argv[])
 {
-int i, total;
+int i, z, total;
 total = 0;
 for (i = 1; i < argc; i++)
 {
-if (atoi(argv[i]) == 0)
+z = 0;
+while (argv[i][z] != '\0')
 {
+if (argv[i][z] < '0' || argv[i][z] > '9')
+{
+
 printf("Error\n");
 return (1);
 }
-if (atoi(argv[i]) < 0)
-{
-continue;
+z++;
 }
+
 total += atoi(argv[i]);
 }
 
