@@ -4,9 +4,9 @@
  * check - takes total and cahnge
  * @total: total value
  * @change: change needed
- * Return void
+ * Return: int
  */
-void check(int total, int change)
+int check(int total, int change)
 {
 while (total > 0)
 {
@@ -41,6 +41,7 @@ change++;
 continue;
 }
 }
+return (change);
 }
 
 /**
@@ -65,7 +66,7 @@ if (total < 0)
 printf("0\n");
 return (0);
 }
-check(total, change);
+change = check(total, change);
 printf("%d\n", change);
 return (0);
 }
