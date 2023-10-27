@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 /**
  * main - prints the command name
  * @argc: int argument count
@@ -9,9 +8,9 @@
 int main(int argc, char const *argv[])
 {
 
-    if (argc > 0)
-    {
-        printf("%s\n", argv[0]);
-    }
-    return (0);
+if (argc > 0)
+{
+printf("%s\n", argv[0]);
+}
+return (0);
 }
