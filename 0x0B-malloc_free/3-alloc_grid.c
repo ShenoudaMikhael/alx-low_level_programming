@@ -28,15 +28,17 @@ int **alloc_grid(int width, int height)
 		{
 			t[i][z] = 0;
 		}
-		if (t[i] == NULL)
+		for (z = 0; z < width; z++)
 		{
-			free(t[i]);
+			if (t[i] == NULL)
+			{
+				free(t[i]);
+			}
 		}
+
+		return (t);
+
+		free(t);
+
+		return (NULL);
 	}
-
-	return (t);
-
-	free(t);
-
-	return (NULL);
-}
