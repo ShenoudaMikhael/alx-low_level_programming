@@ -22,6 +22,9 @@ char *create_array(unsigned int size, char c)
 	{
 		t[i] = c;
 	}
-
+	if (!t)
+	{
+		return (NULL);
+	}
 	return (t);
 }
