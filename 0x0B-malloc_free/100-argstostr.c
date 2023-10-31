@@ -32,7 +32,8 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 	y2 = 0;
-	for (i = 0; i < ac; i++)
+	i = 0;
+	while (i < ac)
 	{
 		z = 0;
 		while (av[i][z])
@@ -42,7 +43,7 @@ char *argstostr(int ac, char **av)
 			z++;
 		}
 		t[y2] = '\n';
-
+		i++;
 		y2++;
 	}
 
