@@ -36,7 +36,7 @@ char *argstostr(int ac, char **av)
 	while (i < ac)
 	{
 		z = 0;
-		while (av[i][z])
+		while (av[i][z] != '\0')
 		{
 			t[y2] = av[i][z];
 			y2++;
