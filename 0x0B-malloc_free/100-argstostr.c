@@ -46,6 +46,5 @@ char *argstostr(int ac, char **av)
 		i++;
 		y2++;
 	}
-	t[y2] = '\n';
 	return (t);
 }
