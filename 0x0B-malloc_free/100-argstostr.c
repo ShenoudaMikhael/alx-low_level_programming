@@ -16,8 +16,7 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	i = 0;
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
 		z = 0;
 		while (av[i][z])
@@ -26,7 +25,6 @@ char *argstostr(int ac, char **av)
 			z++;
 		}
 		y++;
-		i++;
 	}
 	t = malloc((sizeof(char) * y));
 	if (t == NULL)
