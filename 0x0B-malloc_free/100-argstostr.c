@@ -11,7 +11,7 @@ char *argstostr(int ac, char **av)
 {
 	int i, z, y, y2;
 	char *t = NULL;
-	printf("%d %s", ac, *av);
+
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
