@@ -9,14 +9,13 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, z, y, y2;
-	char *t = NULL;
+	char *t;
+	int y = 0, i = 0, z = 0, i2 = 0;
 
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-	i = 0;
 	while (i < ac)
 	{
 		z = 0;
@@ -33,18 +32,15 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	y2 = 0;
-
 	for (i = 0; i < ac; i++)
 	{
-
 		for (z = 0; av[i][z] != '\0'; z++)
 		{
-			t[y2] = av[i][z];
-			y2++;
+			t[i2] = av[i][z];
+			i2++;
 		}
-		t[y2] = '\n';
-		y2++;
+		t[i2] = '\n';
+		i2++;
 	}
 	return (t);
 }
