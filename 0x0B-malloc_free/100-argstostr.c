@@ -34,18 +34,16 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 	y2 = 0;
-	i = 0;
-	while (i < ac)
+
+	for (i = 0; i < ac; i++)
 	{
-		z = 0;
-		while (av[i][z] != '\0')
+
+		for (z = 0; av[i][z] != '\0'; z++)
 		{
 			t[y2] = av[i][z];
 			y2++;
-			z++;
 		}
 		t[y2] = '\n';
-		i++;
 		y2++;
 	}
 	return (t);
