@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * word_c - get num of words
- * @str: ptr string
+ * @s: ptr string
  *
  * Return: int, words count
  */
