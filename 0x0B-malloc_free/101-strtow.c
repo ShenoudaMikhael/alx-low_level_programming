@@ -46,19 +46,13 @@ char **strtow(char *str)
 	char *w2, **t;
 
 	if (str == 0 || *str == 0)
-	{
 		return (NULL);
-	}
 	wordc = word_c(str);
 	if (wordc == 0)
-	{
 		return (NULL);
-	}
 	t = malloc((wordc + 1) * sizeof(char *));
 	if (t == 0)
-	{
 		return (NULL);
-	}
 	for (; *str != '\0' && i < wordc;)
 	{
 		if (*str == ' ')
@@ -68,8 +62,7 @@ char **strtow(char *str)
 			w2 = str;
 			for (; *str != ' ' && *str != '\0';)
 			{
-				cwd++;
-				str++;
+				cwd++, str++;
 			}
 			t[i] = malloc((cwd + 1) * sizeof(char));
 			if (t[i] == 0)
@@ -85,9 +78,7 @@ char **strtow(char *str)
 			}
 			t[i][c] = '\0';
 			i++;
-			c = 0;
-			cwd = 0;
-			str++;
+			c = 0, cwd = 0, str++;
 		}
 	}
 	return (t);
