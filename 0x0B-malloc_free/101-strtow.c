@@ -2,13 +2,13 @@
 /**
  * strtow - splits a string into words.
  * @str: string to be splitted
- * Return
+ * Return: ptr
  */
 char **strtow(char *str)
 {
 	int i, c, i2;
 	char **t;
-	
+
 	if (str == NULL)
 	{
 		return (NULL);
