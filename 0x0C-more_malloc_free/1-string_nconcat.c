@@ -31,13 +31,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		t[i] = s1[i];
 	}
-
 	for (i = 0; i < n && s2[i] != '\0'; i++)
 	{
-
 		t[i + s1_len] = s2[i];
 	}
-	t[s1_len + n + 1] = '\0';
-
+	t[s1_len + i] = '\0';
 	return (t);
 }
