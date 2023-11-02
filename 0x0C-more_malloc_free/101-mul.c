@@ -70,7 +70,7 @@ int _atoi(char *s)
  */
 int main(int argc, char const *argv[])
 {
-	int a, b,m;
+	int a, b, m;
 	char *e = "Error";
 	a = 0;
 	b = 0;
@@ -83,6 +83,6 @@ int main(int argc, char const *argv[])
 
 	a = _atoi(argv[1]);
 	b = _atoi(argv[argc]);
-	 m = a*b;
+	m = a * b;
 	return (m);
 }
