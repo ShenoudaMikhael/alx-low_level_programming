@@ -2,9 +2,9 @@
 #define DOG_H
 struct dog
 {
-    char *name;
-    double age;
-    char *owner;
+	char *name;
+	float age;
+	char *owner;
 };
 
 typedef struct dog dog;
