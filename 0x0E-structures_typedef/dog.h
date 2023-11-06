@@ -8,4 +8,5 @@ struct dog
 };
 
 typedef struct dog dog;
+
 #endif
