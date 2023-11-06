@@ -5,7 +5,7 @@
  * @name: string ptr
  * @age: float
  * @owner: string ptr
-*/
+ */
 struct dog
 {
 	char *name;
@@ -15,4 +15,5 @@ struct dog
 
 typedef struct dog dog;
 
+void init_dog(struct dog *d, char *name, float age, char *owner);
 #endif
