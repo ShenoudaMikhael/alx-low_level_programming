@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     num2 = atoi(argv[3]);
 
     s = argv[2];
-    printf("%s\n", s);
     res = get_op_func(s)(num1, num2);
     printf("%d\n", res);
 
