@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	s = argv[2];
 
 	res = get_op_func(s)(num1, num2);
-	if (!(res >= 0))
+	if (!(res))
 	{
 		printf("Error\n");
 		exit(99);
