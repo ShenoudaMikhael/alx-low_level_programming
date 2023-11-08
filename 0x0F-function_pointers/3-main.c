@@ -30,11 +30,7 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	s = argv[2];
-	if (num2 == 0 && (s[0] == '/' || s[0] == '%'))
-	{
-		printf("Error\n");
-		exit(100);
-	}
+
 	res = get_op_func(s)(num1, num2);
 	if (!(res >= 0))
 	{
