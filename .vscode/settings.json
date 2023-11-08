@@ -2,6 +2,8 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "stdio.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "function_pointers.h": "c",
+        "unistd.h": "c"
     }
 }

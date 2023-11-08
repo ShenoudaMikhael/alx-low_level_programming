@@ -1,16 +1,12 @@
 #include "function_pointers.h"
-void fun(char *name)
-{
-    while (name != '\0')
-    {
-        _putchar(name++);
-    }
-    _putchar('\n');
-}
+
 /**
- * print_name
+ * print_name - print name
+ * @name: name to print
+ * @f: char function
+ * Return: nothing
  */
 void print_name(char *name, void (*f)(char *))
 {
-    f = fun;
+	(f)(name);
 }
