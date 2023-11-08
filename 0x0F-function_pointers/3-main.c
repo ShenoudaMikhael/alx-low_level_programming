@@ -30,11 +30,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	res = get_op_func(s)(num1, num2);
-	if (!(res))
-	{
-		printf("Error\n");
-		exit(99);
-	}
+
 	printf("%d\n", res);
 
 	return (0);
