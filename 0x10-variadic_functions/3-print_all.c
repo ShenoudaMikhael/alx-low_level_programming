@@ -1,6 +1,12 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 /**
+ * p_char - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
+void p_char(va_list a) { printf("%c", va_arg(a, int)); }
+/**
  * p_int - print int
  * @a: vaglist
  * Return: Nothing
@@ -9,12 +15,7 @@ void p_int(va_list a)
 {
 	printf("%d", va_arg(a, int));
 }
-/**
- * p_char - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_char(va_list a) { printf("%c", va_arg(a, int)); }
+
 /**
  * p_float - print int
  * @a: vaglist
