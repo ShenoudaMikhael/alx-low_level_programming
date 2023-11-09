@@ -30,12 +30,13 @@ void p_str(va_list a)
 {
 	char *str = va_arg(a, char *);
 
-	if (!str)
+	if (str)
 	{
-		printf("(nil)");
+		printf("%s", str);
+
 		return;
 	}
-	printf("%s", str);
+	printf("(nil)");
 }
 
 /**
