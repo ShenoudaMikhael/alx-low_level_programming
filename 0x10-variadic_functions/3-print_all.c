@@ -51,7 +51,7 @@ void print_all(const char *const format, ...)
 		{'i', p_int},
 		{'f', p_float},
 		{'s', p_str},
-	};
+		{'\0', NULL}};
 	unsigned int i, n;
 
 	char *sc = ", ", *s = "";
