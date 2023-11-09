@@ -64,8 +64,6 @@ void print_all(const char *const format, ...)
 	i = 0;
 	while (format[i] != '\0' && format != NULL)
 	{
-		i++;
-
 		n = 0;
 		while (fmt[n].t != '\0')
 		{
@@ -79,6 +77,8 @@ void print_all(const char *const format, ...)
 
 			n++;
 		}
+
+		i++;
 	}
 	printf("\n");
 
