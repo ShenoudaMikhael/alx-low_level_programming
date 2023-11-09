@@ -3,8 +3,8 @@
 #include <stdarg.h>
 typedef struct types
 {
-    char t;
-    void (*f)(va_list);
+	char t;
+	void (*f)(va_list);
 } the_types;
 int sum_them_all(const unsigned int n, ...);
 

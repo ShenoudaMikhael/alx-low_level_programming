@@ -29,7 +29,6 @@ void print_all(const char *const format, ...)
 	the_types fmt[] =
 		{
 			{'c', p_char},
-
 			{'i', p_int},
 			{'f', p_float},
 			{'s', p_str},
