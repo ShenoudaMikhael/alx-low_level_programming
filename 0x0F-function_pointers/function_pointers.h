@@ -1,5 +1,6 @@
 #ifndef FP_H
 #define FP_H
+#include <stddef.h>
 
 int _putchar(char c);
 
