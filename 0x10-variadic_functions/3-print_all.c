@@ -1,4 +1,4 @@
-#include <stdarg.h>
+#include "variadic_functions.h"
 #include <stdio.h>
 void p_int(va_list a)
 {
@@ -25,11 +25,7 @@ void p_str(va_list a)
  */
 void print_all(const char *const format, ...)
 {
-	typedef struct types
-	{
-		char t;
-		void (*f)(va_list);
-	} the_types;
+
 	the_types fmt[] =
 		{
 			{'c', p_char},
