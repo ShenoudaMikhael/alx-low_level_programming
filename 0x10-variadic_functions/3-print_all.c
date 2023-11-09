@@ -2,7 +2,7 @@
 #include <stdio.h>
 void p_int(va_list a) { printf("%d", va_arg(a, int)); }
 void p_float(va_list a) { printf("%f", va_arg(a, double)); }
-void p_char(va_list a) { printf("%c", va_arg(a, int)); }
+void p_char(va_list a) { printf("%c", va_arg(a + '0', int)); }
 void p_str(va_list a) { printf("%s", va_arg(a, char *)); }
 
 /**
