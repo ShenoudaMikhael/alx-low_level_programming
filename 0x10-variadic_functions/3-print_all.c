@@ -34,8 +34,9 @@ void print_all(const char *const format, ...)
 			{'f', p_float},
 			{'s', p_str},
 		};
-
 	unsigned int i, n;
+
+	char *sc = ", ", *s = "";
 
 	va_list args;
 
@@ -50,9 +51,9 @@ void print_all(const char *const format, ...)
 
 			if (fmt[n].t == format[i])
 			{
+				printf("%s", s);
 				fmt[n].f(args);
-
-				printf(", ");
+				s = sc;
 			}
 
 			n++;
