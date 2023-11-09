@@ -1,6 +1,9 @@
 #include <stdarg.h>
 #include <stdio.h>
-void p_int(va_list a) { printf("%d", va_arg(a, int)); }
+void p_int(va_list a)
+{
+	printf("%d", va_arg(a, int));
+}
 void p_float(va_list a) { printf("%f", va_arg(a, double)); }
 void p_char(va_list a) { printf("%c", va_arg(a, int)); }
 void p_str(va_list a) { printf("%s", va_arg(a, char *)); }
@@ -20,8 +23,9 @@ void print_all(const char *const format, ...)
 	} the_types;
 	the_types fmt[] =
 		{
-			{'i', p_int},
 			{'c', p_char},
+
+			{'i', p_int},
 			{'f', p_float},
 			{'s', p_str},
 		};
@@ -35,17 +39,20 @@ void print_all(const char *const format, ...)
 	i = 0;
 	while (format[i] != '\0')
 	{
-		printf("%c\n", format[i]);
 		n = 0;
 		while (fmt[n].t != '\0')
 		{
-			fmt[n].f(args);
+
+			if (fmt[n].t == format[i])
+			{
+				fmt[n].f(args);
+				if (fmt[n + 1].t != '\0')
+				{
+					printf(", ");
+				}
+			}
 
 			n++;
-			if (fmt[n].t != '\0')
-			{
-				printf(", ");
-			}
 		}
 
 		i++;
