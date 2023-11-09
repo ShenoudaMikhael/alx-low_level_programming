@@ -9,6 +9,11 @@ void p_char(va_list a) { printf("%c", va_arg(a, int)); }
 void p_str(va_list a)
 {
 	char *str = va_arg(a, char *);
+	if (!str)
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", str);
 }
 
@@ -50,10 +55,8 @@ void print_all(const char *const format, ...)
 			if (fmt[n].t == format[i])
 			{
 				fmt[n].f(args);
-				if (fmt[n + 1].t != '\0')
-				{
-					printf(", ");
-				}
+
+				printf(", ");
 			}
 
 			n++;
