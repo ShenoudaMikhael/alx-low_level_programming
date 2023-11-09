@@ -1,14 +1,35 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+/**
+ * p_int - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
 void p_int(va_list a)
 {
 	printf("%d", va_arg(a, int));
 }
+/**
+ * p_float - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
 void p_float(va_list a) { printf("%f", va_arg(a, double)); }
+/**
+ * p_char - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
 void p_char(va_list a) { printf("%c", va_arg(a, int)); }
+/**
+ * p_str - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
 void p_str(va_list a)
 {
 	char *str = va_arg(a, char *);
+
 	if (!str)
 	{
 		printf("(nil)");
@@ -18,21 +39,19 @@ void p_str(va_list a)
 }
 
 /**
- * print_strings - print all args
- * @n: count or args
- * @separator: char sperator
+ * print_all - print all args
+ * @format: count or args
  * Return: int
  */
 void print_all(const char *const format, ...)
 {
 
-	the_types fmt[] =
-		{
-			{'c', p_char},
-			{'i', p_int},
-			{'f', p_float},
-			{'s', p_str},
-		};
+	the_types fmt[] = {
+		{'c', p_char},
+		{'i', p_int},
+		{'f', p_float},
+		{'s', p_str},
+	};
 	unsigned int i, n;
 
 	char *sc = ", ", *s = "";

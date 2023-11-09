@@ -1,6 +1,11 @@
 #ifndef VF_H
 #define VF_H
 #include <stdarg.h>
+/**
+ * struct types - struct
+ * @t: type
+ * @f: function to call
+*/
 typedef struct types
 {
 	char t;
