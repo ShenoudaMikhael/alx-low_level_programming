@@ -10,17 +10,18 @@ void p_int(va_list a)
 	printf("%d", va_arg(a, int));
 }
 /**
- * p_float - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_float(va_list a) { printf("%f", va_arg(a, double)); }
-/**
  * p_char - print int
  * @a: vaglist
  * Return: Nothing
  */
 void p_char(va_list a) { printf("%c", va_arg(a, int)); }
+/**
+ * p_float - print int
+ * @a: vaglist
+ * Return: Nothing
+ */
+void p_float(va_list a) { printf("%f", va_arg(a, double)); }
+
 /**
  * p_str - print int
  * @a: vaglist
