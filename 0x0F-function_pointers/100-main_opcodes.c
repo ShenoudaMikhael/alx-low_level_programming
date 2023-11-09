@@ -11,12 +11,12 @@ int main(int argc, char *argv[])
     if (argc != 2)
     {
         printf("Erorr\n");
-        exit(1);
+        return (1);
     }
     if (n < 0)
     {
         printf("Erorr\n");
-        exit(2);
+        return (2);
     }
     for (i = 0; i < n; i++)
     {
