@@ -1,45 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-/**
- * p_char - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_char(va_list a) { printf("%c", va_arg(a, int)); }
-/**
- * p_int - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_int(va_list a)
-{
-	printf("%d", va_arg(a, int));
-}
-
-/**
- * p_float - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_float(va_list a) { printf("%f", va_arg(a, double)); }
-
-/**
- * p_str - print int
- * @a: vaglist
- * Return: Nothing
- */
-void p_str(va_list a)
-{
-	char *str = va_arg(a, char *);
-
-	if (str)
-	{
-		printf("%s", str);
-
-		return;
-	}
-	printf("(nil)");
-}
+#include <stdarg.h>
 
 /**
  * print_all - print all args
@@ -49,15 +10,9 @@ void p_str(va_list a)
 void print_all(const char *const format, ...)
 {
 
-	the_types fmt[] = {
-		{'c', p_char},
-		{'i', p_int},
-		{'f', p_float},
-		{'s', p_str},
-		{'\0', NULL}};
 	unsigned int i, n;
 
-	char *sc = ", ", *s = "";
+	char *str, *sc = ", ", *s = "";
 
 	va_list args;
 
@@ -65,22 +20,35 @@ void print_all(const char *const format, ...)
 
 	i = 0;
 	while (format[i] != '\0' && format != NULL)
-	{
-		n = 0;
-		while (fmt[n].t != '\0')
-		{
-
-			if (fmt[n].t == format[i])
-			{
-				printf("%s", s);
-				fmt[n].f(args);
-				s = sc;
-			}
-
-			n++;
-		}
-
 		i++;
+	{
+	}
+	n = 0;
+	while (format && format[n])
+	{
+		if (n == (i - 1))
+		{
+			s = sc;
+		}
+		switch (format[n])
+		{
+		case 'c':
+			printf("%c%s", va_arg(args, int), s);
+			break;
+		case 'i':
+			printf("%d%s", va_arg(args, int), s);
+			break;
+		case 'f':
+			printf("%f%s", va_arg(args, double), s);
+			break;
+		case 's':
+			str = va_arg(args, char *);
+			if (str == NULL)
+				str = "(nil)";
+			printf("%s%s", str, s);
+			break;
+		}
+		n++;
 	}
 	printf("\n");
 
