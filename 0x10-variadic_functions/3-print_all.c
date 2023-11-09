@@ -8,14 +8,8 @@ void p_float(va_list a) { printf("%f", va_arg(a, double)); }
 void p_char(va_list a) { printf("%c", va_arg(a, int)); }
 void p_str(va_list a)
 {
-	char *str = va_arg(a, char *);
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
 
-	printf("%s", str);
+	printf("%s", va_arg(a, char *));
 }
 
 /**
