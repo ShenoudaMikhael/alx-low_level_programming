@@ -11,9 +11,7 @@ void print_all(const char *const format, ...)
 {
 
 	unsigned int i, n;
-
-	char *str, *sc = ", " ;
-
+	char *str, *sc = ", ";
 	va_list args;
 
 	va_start(args, format);
@@ -21,9 +19,8 @@ void print_all(const char *const format, ...)
 	n = 0;
 	i = 0;
 	while (format[i] != '\0' && format != NULL)
-	{
 		i++;
-	}
+
 	while (format && format[n])
 	{
 		if (n == (i - 1))
@@ -51,6 +48,5 @@ void print_all(const char *const format, ...)
 		n++;
 	}
 	printf("\n");
-
 	va_end(args);
 }
