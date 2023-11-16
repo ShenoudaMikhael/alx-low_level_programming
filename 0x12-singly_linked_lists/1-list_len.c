@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 /**
- * print_list - print linked list
+ * list_len - print list lenght
  * @h: linked list
  * Return: lenth of list
  */
