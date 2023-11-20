@@ -10,24 +10,19 @@
 int rec(const listint_t *n, int v)
 {
 
-	printf("%i\n", n->n);
-
 	if (n->next != NULL)
 		v = rec(n->next, v);
 	return (v + 1);
 }
 /**
- * print_listint - print list
+ * listint_len - print list
  * @h: pointer to list
  * Return: Nothing
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	int i = 0;
 	int q = 0;
-
-	if (h == NULL)
-		return (0);
 
 	q = rec(h, i);
 	return (q);
