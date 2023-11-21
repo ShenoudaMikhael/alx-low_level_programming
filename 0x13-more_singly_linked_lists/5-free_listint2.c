@@ -8,12 +8,11 @@
  */
 void free_list2(listint_t *head)
 {
-	if (head == NULL)
+	if (head->next != NULL)
 	{
-		return;
+		free_list2(head->next);
 	}
 
-	free_list2(head->next);
 	free(head);
 }
 /**
