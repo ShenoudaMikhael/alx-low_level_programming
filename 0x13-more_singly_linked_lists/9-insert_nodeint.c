@@ -23,6 +23,8 @@ listint_t *rec4(
 		head->next = temp;
 		return (temp);
 	}
+	if (new_element_index > current_index && head->next == NULL)
+		return (NULL);
 	if (head->next != NULL)
 		rec4(head->next, new_element, current_index + 1, new_element_index, temp);
 	return (NULL);
