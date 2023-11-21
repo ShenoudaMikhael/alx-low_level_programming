@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
 #include "lists.h"
 /**
  * free_list2 - free linked list memory
@@ -12,8 +13,8 @@ void free_list2(listint_t *head)
 	{
 		free_list2(head->next);
 	}
-
-	free(head);
+	if (head != NULL)
+		free(head);
 }
 /**
  * free_listint2 - free linked list memory
@@ -28,4 +29,5 @@ void free_listint2(listint_t **head)
 	}
 
 	free_list2(*head);
+	*head = NULL;
 }
