@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * free_list - free linked list memory
+ * free_listint - free linked list memory
  * @head: linked list ptr
  * Return: nothing
  */
