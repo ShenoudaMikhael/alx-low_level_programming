@@ -1,6 +1,11 @@
 #include "lists.h"
 #include <stdlib.h>
-
+/**
+ * delete_nodeint_at_index - delete single nodw
+ * @head: linked list
+ * @index: index to remove
+ * Return: int 1 or -1
+ */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *next_elem, *hold;
