@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		_putchar('1');
 		return;
 	}
-	base = 1 << 31;
+	base = 1 << 30;
 
 	while (base > n)
 	{
