@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_binary - print binary for number
  * @n: number to print
@@ -18,7 +19,6 @@ void print_binary(unsigned long int n)
 		_putchar('1');
 		return;
 	}
-
 	base = 1 << 31;
 
 	while (base > n)
@@ -28,8 +28,7 @@ void print_binary(unsigned long int n)
 
 	while (base > 0)
 	{
-
-		if (n > base)
+		if (n >= base && n != 1)
 		{
 			_putchar('1');
 			n -= base;
