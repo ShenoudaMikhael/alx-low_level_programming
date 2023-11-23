@@ -8,6 +8,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int base = 0;
+	char flag = 0;
 
 	if (n == 0)
 	{
@@ -25,15 +26,15 @@ void print_binary(unsigned long int n)
 	{
 		base >>= 1;
 	}
-
 	while (base > 0)
 	{
 		if (n >= base)
 		{
+			flag = 1;
 			_putchar('1');
 			n -= base;
 		}
-		else
+		else if (flag == 1 || base == 1)
 		{
 			_putchar('0');
 		}
