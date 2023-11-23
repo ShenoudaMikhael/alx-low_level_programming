@@ -14,7 +14,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	base = 1 << 30;
+	base = 1 << 31;
 
 	while (base > n)
 	{
