@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 
 	while (base > 0)
 	{
-		if (n >= base )
+		if (n >= base)
 		{
 			_putchar('1');
 			n -= base;
