@@ -13,8 +13,13 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
+	if (n == 1)
+	{
+		_putchar('1');
+		return;
+	}
 
-	base = 1 << 30;
+	base = 1 << 31;
 
 	while (base > n)
 	{
@@ -23,7 +28,8 @@ void print_binary(unsigned long int n)
 
 	while (base > 0)
 	{
-		if (n >= base)
+
+		if (n > base)
 		{
 			_putchar('1');
 			n -= base;
