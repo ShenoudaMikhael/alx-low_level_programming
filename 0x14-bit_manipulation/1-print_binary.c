@@ -7,24 +7,20 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int displayMask = 1 << 31;
-	unsigned int i = 1;
-	unsigned int l = 32;
 
-	if (n <= 0)
+
+	if (n == 0)
 	{
 		_putchar('0');
 		return;
 	}
+	else if (n == 1)
+	{
 
-	while (displayMask > n)
-	{
-		displayMask >>= 1;
-		l--;
+		_putchar('1');
+		return;
 	}
-	for (i = 1; i <= l; ++i)
-	{
-		_putchar(n & displayMask ? '1' : '0');
-		n <<= 1;
-	}
+
+	print_binary(n >> 1);
+	_putchar('0' + (n & 1));
 }
