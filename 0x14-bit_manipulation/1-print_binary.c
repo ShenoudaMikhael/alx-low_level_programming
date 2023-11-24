@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	unsigned int i = 1;
 	unsigned int l = 32;
 
-	if (n == 0)
+	if (n <= 0)
 	{
 		_putchar('0');
 		return;
