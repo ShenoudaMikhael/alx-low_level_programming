@@ -2,22 +2,29 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-
+/**
+ * read_textfile - read text file and print it
+ * @filename: ptr to file name
+ * @letters: number of letters to print
+ * Return: int printed characters
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 
-    int f, q;
-    size_t z;
-    char *buff;
+	int f;
+	size_t z, q;
+	char *buff;
 
-    f = open(filename, 2);
-    buff = malloc(sizeof(char) * letters);
+	f = open(filename, 2);
+	if (f == 0 || filename == NULL)
+		return (0);
+	buff = malloc(sizeof(char) * letters);
 
-    q = read(f, buff, letters);
-    for (z = 0; z < letters; z++)
-    {
-        write(1, &buff[z], 1);
-    }
+	q = read(f, buff, letters);
+	for (z = 0; z < q; z++)
+	{
+		write(1, &buff[z], 1);
+	}
 
-    return (q);
+	return (q);
 }
