@@ -34,6 +34,11 @@ int main(int argc, char const *argv[])
     if (buff == NULL)
         return (-1);
     strlen = read(file1, buff, 1024);
+    if (strlen == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+        exit(98);
+    }
     write(file2, buff, strlen);
 
     return 0;
