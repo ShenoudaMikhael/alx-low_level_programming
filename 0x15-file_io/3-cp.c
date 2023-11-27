@@ -10,7 +10,7 @@
  */
 int main(int argc, char const *argv[])
 {
-    int file1, file2, strlen, r;
+    int file1, file2, strlen;
     char *buff;
 
     if (argc != 3)
@@ -34,11 +34,7 @@ int main(int argc, char const *argv[])
     if (buff == NULL)
         return (-1);
     strlen = read(file1, buff, 1024);
-    r = write(file2, buff, strlen);
-    if (r == 0)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-        exit(99);
-    }
+    write(file2, buff, strlen);
+
     return 0;
 }
