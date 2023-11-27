@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
         dprintf(file1, "Error: Can't read from file %s\n", argv[1]);
         exit(98);
     }
-    file2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0666);
+    file2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
     if (file1 == -1)
     {
         dprintf(file2, "Error: Can't write to %s\n", argv[2]);
