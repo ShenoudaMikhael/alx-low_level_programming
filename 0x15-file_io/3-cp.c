@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
 
         r = write(file2, buff, strlen);
 
-        if (r == -1)
+        if (r != strlen || r == -1)
         {
             dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
             exit(99);
