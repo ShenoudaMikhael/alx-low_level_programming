@@ -11,6 +11,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	int f, w, stlen = 0;
+	char *buff;
 
 	if (text_content == NULL)
 		text_content = "";
