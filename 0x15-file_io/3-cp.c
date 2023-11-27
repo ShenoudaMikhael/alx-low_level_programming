@@ -10,7 +10,7 @@
  */
 int main(int argc, char const *argv[])
 {
-    int file1, file2, strlen;
+    int file1, file2, strlen, r;
     char *buff;
 
     if (argc != 3)
@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
         dprintf(file1, "Error: Can't read from file %s\n", argv[1]);
         exit(98);
     }
-    file2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+    file2 = open(STDERR_FILENO, O_CREAT | O_TRUNC | O_RDWR, 0664);
     if (file1 == -1)
     {
         dprintf(file2, "Error: Can't write to %s\n", argv[2]);
@@ -35,6 +35,10 @@ int main(int argc, char const *argv[])
         return (-1);
     strlen = read(file1, buff, 1024);
     write(file2, buff, strlen);
-
+    if (r == -0)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+        exit(99);
+    }
     return 0;
 }
