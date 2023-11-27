@@ -12,19 +12,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 
 	int f;
-	size_t z, q;
+	size_t z, q, w;
 	char *buff;
 
+	if (letters == 0 || filename == NULL)
+		return (0);
+
 	f = open(filename, 2);
-	if (f == 0 || filename == NULL)
+	if (f == -1)
 		return (0);
 	buff = malloc(sizeof(char) * letters);
-
+	if (buff == NULL)
+		return (0);
 	q = read(f, buff, letters);
-	for (z = 0; z < q; z++)
-	{
-		write(1, &buff[z], 1);
-	}
 
+	w = 0;
+	for (z = 0; z < letters; z++)
+	{
+		w += write(1, &buff[z], 1);
+	}
+	close(f);
 	return (q);
 }
