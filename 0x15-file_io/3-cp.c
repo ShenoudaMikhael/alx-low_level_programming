@@ -33,18 +33,25 @@ int main(int argc, char const *argv[])
     buff = malloc(sizeof(char) * 1024);
     if (buff == NULL)
         return (-1);
-    strlen = read(file1, buff, 1024);
-    if (strlen == -1)
+    strlen = 1024;
+    while (strlen == 1024)
     {
-        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-        exit(98);
+        strlen = read(file1, buff, 1024);
+        if (strlen == -1)
+        {
+            dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+            exit(98);
+        }
+
+        r = write(file2, buff, strlen);
+
+        if (r == -1)
+        {
+            dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+            exit(99);
+        }
     }
-    r = write(file2, buff, strlen);
-    if (r == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-        exit(99);
-    }
+
     if (close(file1) == -1)
     {
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
