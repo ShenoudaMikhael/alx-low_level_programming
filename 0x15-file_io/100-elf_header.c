@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * mian - check code
+ * main - check code
  * @argc: arg count
  * @argv: args
  * Return: 0
