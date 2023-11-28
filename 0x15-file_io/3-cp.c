@@ -4,67 +4,55 @@
 #include <fcntl.h>
 /**
  * main - copy file
- * @ac: arg count
+ * @argc: arg count
  * @av: args
  * Return: Always 0.
  */
-int main(int argc, char const *argv[])
+int main(int argc, char const *av[])
 {
-    int file1, file2, strlen, r;
-    char *buff;
+	char *buff;
 
-    if (argc != 3)
-    {
-        dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-        exit(97);
-    }
-    file1 = open(argv[1], O_RDONLY);
-    if (file1 == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-        exit(98);
-    }
-    file2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-    if (file2 == -1)
-    {
-        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-        exit(99);
-    }
-    buff = malloc(sizeof(char) * 1024);
-    if (buff == NULL)
-        return (-1);
-    strlen = 1024;
-    while (strlen == 1024)
-    {
-        strlen = read(file1, buff, 1024);
-        if (strlen == -1)
-        {
-            free(buff);
-            dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-            exit(98);
-        }
+	int file1, file2, r, strlen = 1024;
 
-        r = write(file2, buff, strlen);
-
-        if (r != strlen || r == -1)
-        {
-            free(buff);
-            dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-            exit(99);
-        }
-    }
-
-    if (close(file1) == -1)
-    {
-        free(buff);
-        dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
-        exit(100);
-    }
-    if (close(file2) == -1)
-    {
-        free(buff);
-        dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
-        exit(100);
-    }
-    return (0);
+	if (argc != 3)
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	file1 = open(av[1], O_RDONLY);
+	if (file1 == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+	file2 = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+	if (file2 == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
+	buff = malloc(sizeof(char) * 1024);
+	if (buff == NULL)
+		return (-1);
+	while (strlen == 1024)
+	{
+		strlen = read(file1, buff, 1024);
+		if (strlen == -1)
+		{
+			free(buff);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
+		r = write(file2, buff, strlen);
+		if (r != strlen || r == -1)
+		{
+			free(buff);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99);
+		}
+	}
+	if (close(file1) == -1)
+	{
+		free(buff);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
+		exit(100);
+	}
+	if (close(file2) == -1)
+	{
+		free(buff);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
+		exit(100);
+	}
+	return (0);
 }
