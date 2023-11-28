@@ -11,7 +11,7 @@
 int main(int argc, char const *argv[])
 {
     int file1, file2, strlen, r;
-    char *buff;
+    char *buff[1024];
 
     if (argc != 3)
     {
@@ -30,7 +30,6 @@ int main(int argc, char const *argv[])
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         exit(99);
     }
-    buff = malloc(sizeof(char) * 1024);
     if (buff == NULL)
         return (-1);
     strlen = 1024;
