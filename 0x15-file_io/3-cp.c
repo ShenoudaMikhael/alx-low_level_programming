@@ -11,7 +11,7 @@
 int main(int argc, char const *argv[])
 {
     int file1, file2, strlen, r;
-    char *buff[1024];
+    char *buff;
 
     if (argc != 3)
     {
@@ -30,6 +30,7 @@ int main(int argc, char const *argv[])
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
         exit(99);
     }
+    buff = malloc(sizeof(char) * 1024);
     if (buff == NULL)
         return (-1);
     strlen = 1024;
@@ -50,7 +51,11 @@ int main(int argc, char const *argv[])
             exit(99);
         }
     }
-
+    if (strlen == -1)
+    {
+        dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+        exit(98);
+    }
     if (close(file1) == -1)
     {
         dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
