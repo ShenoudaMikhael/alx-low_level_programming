@@ -11,7 +11,6 @@
 int main(int argc, char const *av[])
 {
 	char *buff;
-
 	int file1, file2, r, strlen = 1024;
 
 	if (argc != 3)
@@ -30,28 +29,24 @@ int main(int argc, char const *av[])
 		strlen = read(file1, buff, 1024);
 		if (strlen == -1)
 		{
-			free(buff);
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			dprintf(2, "Error: Can't read from file %s\n", av[1]), free(buff);
 			exit(98);
 		}
 		r = write(file2, buff, strlen);
 		if (r != strlen || r == -1)
 		{
-			free(buff);
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			dprintf(2, "Error: Can't write to %s\n", av[2]), free(buff);
 			exit(99);
 		}
 	}
 	if (close(file1) == -1)
 	{
-		free(buff);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), free(buff);
 		exit(100);
 	}
 	if (close(file2) == -1)
 	{
-		free(buff);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file2), free(buff);
 		exit(100);
 	}
 	return (0);
