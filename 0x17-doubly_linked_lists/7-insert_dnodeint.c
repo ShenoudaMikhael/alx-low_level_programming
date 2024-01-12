@@ -20,6 +20,7 @@ dlistint_t *get_mydnodeint_at_index(
 	{
 		if (*i == index - 1)
 		{
+
 			return (head);
 		}
 
@@ -57,9 +58,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		return (NULL);
 	}
+
 	if (idx == (i + 1) && tail == NULL)
 		return (add_dnodeint_end(h, n));
-	if (idx < (i + 1))
+	printf("%d     %d\n", idx, i + 2);
+
+	if (idx < (i + 2))
 	{
 		tmp = malloc(sizeof(dlistint_t));
 		if (tmp)
