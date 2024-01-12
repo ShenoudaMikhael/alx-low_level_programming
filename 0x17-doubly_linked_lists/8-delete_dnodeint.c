@@ -42,22 +42,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (head == NULL || *head == NULL)
 		return (-1);
-
 	tmp = get_mydnodeint_at_index(*head, index, &i);
-	printf("here %d   i: %d   index: %d   ", tmp->n, i, index);
 	if (index == 0 && *head)
 	{
-		printf("start\n");
 		if ((*head)->next)
 			*head = (*head)->next;
 		(*head)->prev = NULL;
 
-		free(tmp);
 		return (1);
 	}
-	if (i == index && tmp->next != NULL && tmp->prev != NULL)
+	else if (i == index)
 	{
-		printf("middle\n");
 		tmp->next->prev = tmp->prev;
 
 		tmp->prev->next = tmp->next;
@@ -65,9 +60,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (1);
 	}
 
-	if (tmp->next == NULL)
+	else if (tmp->next == NULL)
 	{
-		printf("end\n");
 		tmp->prev = NULL;
 		free(tmp);
 		return (1);
