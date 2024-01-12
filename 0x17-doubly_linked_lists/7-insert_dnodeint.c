@@ -6,9 +6,11 @@
  * get_dnodeint_at_index - get node at index
  * @head: list head
  * @index: list index
+ * @i: current index
  * Return: node or null
  */
-dlistint_t *get_mydnodeint_at_index(dlistint_t *head, unsigned int index, unsigned int *i)
+dlistint_t *get_mydnodeint_at_index(
+	dlistint_t *head, unsigned int index, unsigned int *i)
 {
 
 	if (head == NULL)
