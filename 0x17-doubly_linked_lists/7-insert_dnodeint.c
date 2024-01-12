@@ -61,17 +61,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (idx == (i + 1) && tail == NULL)
 		return (add_dnodeint_end(h, n));
-	printf("%d     %d\n", idx, i + 2);
 
-	tmp = malloc(sizeof(dlistint_t));
-	if (tmp)
+	if (idx < (i + 2))
 	{
-		tmp->n = n;
-		tmp->next = tail->next;
-		tmp->prev = tail;
-		tail->next->prev = tmp;
-		tail->next = tmp;
-		return (tmp);
+		tmp = malloc(sizeof(dlistint_t));
+		if (tmp)
+		{
+			tmp->n = n;
+			tmp->next = tail->next;
+			tmp->prev = tail;
+			tail->next->prev = tmp;
+			tail->next = tmp;
+			return (tmp);
+		}
 	}
 	return (NULL);
 }
