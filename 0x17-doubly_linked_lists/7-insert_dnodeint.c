@@ -52,7 +52,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	tail = get_mydnodeint_at_index(*h, idx, &i);
 	if (idx > i + 1)
 	{
-		printf(">i");
 		return (NULL);
 	}
 	if (idx == (i) && tail == NULL)
