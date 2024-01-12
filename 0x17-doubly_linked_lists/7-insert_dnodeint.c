@@ -63,6 +63,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (tmp)
 	{
 		tmp->n = n;
+		printf("n:%d\n", n);
 		tmp->next = tail->next;
 		tmp->prev = tail;
 		tail->next->prev = tmp;
