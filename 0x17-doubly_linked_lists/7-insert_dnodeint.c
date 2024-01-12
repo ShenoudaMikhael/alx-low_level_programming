@@ -52,22 +52,25 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (add_dnodeint(h, n));
 
 	tail = get_mydnodeint_at_index(*h, idx, &i);
-	if (idx > i + 1)
+
+	if (idx > (i + 1))
 	{
 		return (NULL);
 	}
 	if (idx == (i + 1) && tail == NULL)
 		return (add_dnodeint_end(h, n));
-
-	tmp = malloc(sizeof(dlistint_t));
-	if (tmp)
+	if (idx < (i + 1))
 	{
-		tmp->n = n;
-		tmp->next = tail->next;
-		tmp->prev = tail;
-		tail->next->prev = tmp;
-		tail->next = tmp;
-		return (tmp);
+		tmp = malloc(sizeof(dlistint_t));
+		if (tmp)
+		{
+			tmp->n = n;
+			tmp->next = tail->next;
+			tmp->prev = tail;
+			tail->next->prev = tmp;
+			tail->next = tmp;
+			return (tmp);
+		}
 	}
 	return (NULL);
 }
