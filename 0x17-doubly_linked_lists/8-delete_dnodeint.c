@@ -45,24 +45,23 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	tmp = get_mydnodeint_at_index(*head, index, &i);
 	if (index == 0 && *head)
 	{
+
 		if ((*head)->next)
+		{
 			*head = (*head)->next;
-		(*head)->prev = NULL;
+			(*head)->prev = NULL;
+		}
+		else
+			*head = NULL;
 
 		return (1);
 	}
 	else if (i == index)
 	{
-		tmp->next->prev = tmp->prev;
+		if (tmp->next)
+			tmp->next->prev = tmp->prev;
 
 		tmp->prev->next = tmp->next;
-		free(tmp);
-		return (1);
-	}
-
-	else if (tmp->next == NULL)
-	{
-		tmp->prev = NULL;
 		free(tmp);
 		return (1);
 	}
