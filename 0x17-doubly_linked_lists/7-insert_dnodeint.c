@@ -3,6 +3,31 @@
 #include <stdio.h>
 #include "lists.h"
 /**
+ * get_dnodeint_at_index - get node at index
+ * @head: list head
+ * @index: list index
+ * Return: node or null
+ */
+dlistint_t *get_mydnodeint_at_index(dlistint_t *head, unsigned int index, unsigned int *i)
+{
+
+	if (head == NULL)
+		return (NULL);
+
+	while (head != NULL)
+	{
+		if (*i == index)
+		{
+			return (head);
+		}
+
+		head = head->next;
+		*i = *i + 1;
+	}
+	return (NULL);
+}
+
+/**
  * insert_dnodeint_at_index - insert at index
  * @h: list head
  * @idx: index
@@ -13,6 +38,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 
 	unsigned int i = 0;
+
 	dlistint_t *tmp = NULL;
 
 	dlistint_t *tail = *h;
@@ -23,17 +49,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (idx == 0)
 		return (add_dnodeint(h, n));
 
-	while (i < idx - 1 && tail)
+	tail = get_mydnodeint_at_index(*h, idx, &i);
+	if (idx > i)
 	{
-		tail = tail->next;
-		i++;
+		return (NULL);
 	}
-	if (tail->next == NULL)
+	if (idx == (i) && tail == NULL)
 		return (add_dnodeint_end(h, n));
 
 	tmp = malloc(sizeof(dlistint_t));
 	if (tmp)
 	{
+		tmp->n = n;
 		tmp->next = tail->next;
 		tmp->prev = tail;
 		tail->next->prev = tmp;
