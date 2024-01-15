@@ -43,7 +43,7 @@ double div(int a, int b)
 {
 	if (b != 0)
 	{
-		return ((double)a / b);
+		return (a / b);
 	}
 	else
 	{
