@@ -2,13 +2,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * srand - hack nukbers
- * @q: int
- * Return: void
+ * rand - hack nukbers
+ * Return: 0
  */
-void srand(unsigned int q)
+int rand(void)
 {
-	(void)q;
 	write(STDOUT_FILENO, "9 8 10 24 75 - 9\n", 17);
 	write(STDOUT_FILENO, "Congratulations, you win the Jackpot!\n", 38);
 	exit(EXIT_SUCCESS);
