@@ -1,8 +1,9 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 int rand()
 {
-	write(1, "9 8 10 24 75 - 9\n", 17);
-	write(1, "Congratulations, you win the Jackpot!\n", 39);
-	exit(0);
+	puts("9 8 10 24 75 - 9");
+	puts("Congratulations, you win the Jackpot!");
+	exit(1);
 }
