@@ -38,7 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 		if (head->next == NULL)
 		{
-			ht->array[index]->value = strdup(value);
+			ht->array[index]->next = node;
 			return (0);
 		}
 
