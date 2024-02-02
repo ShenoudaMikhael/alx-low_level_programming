@@ -50,6 +50,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 
 			node->next = head->next->next;
+			free(head->next->value);
+			free(head->next->key);
+			free(head->next);
 			head->next = node;
 		}
 		else
