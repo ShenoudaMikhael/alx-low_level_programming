@@ -42,14 +42,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			return (0);
 		}
 
-		while (strcmp(key, head->key) != 0 && head->next != NULL)
+		while (head->next != NULL && strcmp(key, head->key) != 0)
 		{
 			head = head->next;
 		}
-		if (head->next != NULL)
+		if (head->next != NULL && strcmp(key, head->key))
 		{
 			head->value = strdup(value);
-			
+			free(node->key);
+			free(node->value);
+			free(node);
 		}
 		else
 		{
