@@ -46,12 +46,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			head = head->next;
 		}
-		if (head->next != NULL && strcmp(key, head->key))
+		if (head->next != NULL && strcmp(key, head->key) == 0)
 		{
-			head->value = strdup(value);
-			free(node->key);
-			free(node->value);
-			free(node);
+
+			node->next = head->next;
 		}
 		else
 		{
