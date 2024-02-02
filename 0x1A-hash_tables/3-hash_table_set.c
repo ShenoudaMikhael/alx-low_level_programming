@@ -21,11 +21,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-
+	newKey = strdup(key);
 	node->key = newKey;
 	node->value = strdup(value);
 	node->next = NULL;
-	newKey = strdup(key);
 	index = key_index((const unsigned char *)newKey, ht->size);
 
 	if (ht->array[index] == NULL)
