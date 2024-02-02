@@ -41,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(notempty_node->value);
 			free(notempty_node);
 		}
-		while (notempty_node->next != NULL && strcmp(notempty_node->key, key) != 0) /* in the middle */
+		while (notempty_node->next != NULL && strcmp(notempty_node->next->key, key) != 0) /* in the middle */
 			notempty_node = notempty_node->next;
 		if (strcmp(notempty_node->key, key) == 0)
 		{
