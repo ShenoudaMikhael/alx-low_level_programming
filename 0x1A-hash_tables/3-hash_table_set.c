@@ -40,8 +40,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (strcmp(key, head->key) == 0)
 			{
-				free(head->next->value);
-				head->next->value = strdup(value);
+				free(head->value);
+				head->value = strdup(value);
 				return (1);
 			}
 
