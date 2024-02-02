@@ -29,7 +29,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht->array[index] == NULL)
 	{
-
 		ht->array[index] = node;
 	}
 	else
@@ -39,7 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (head->next == NULL)
 		{
 			ht->array[index]->next = node;
-			return (0);
+			return (1);
 		}
 
 		while (head->next != NULL && strcmp(key, head->next->key) != 0)
