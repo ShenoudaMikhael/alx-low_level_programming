@@ -52,7 +52,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			notempty_node->next = node;
 		}
 		else
-			notempty_node->next = node;
+		{
+			node->next = ht->array[new_index];
+			ht->array[new_index] = node;
+		}
 	}
 	return (1);
 }
