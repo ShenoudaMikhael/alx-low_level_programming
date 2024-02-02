@@ -45,6 +45,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				free(head->value);
 				head->value = strdup(value);
+				if (head->value == NULL)
+					return (0);
+
 				return (1);
 			}
 
