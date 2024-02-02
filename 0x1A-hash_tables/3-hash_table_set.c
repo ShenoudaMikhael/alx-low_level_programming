@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "hash_tables.h"
+
 /**
  * hash_table_set - insert node in hash table
  * @ht: hash table
@@ -12,7 +13,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned int index;
-	hash_node_t *node;
+	hash_node_t *node, *head;
 	char *newKey = NULL;
 
 	if (key == NULL || strcmp(key, "") == 0 || ht == NULL)
@@ -26,6 +27,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 	newKey = strdup(key);
 	index = key_index((const unsigned char *)newKey, ht->size);
+
 	if (ht->array[index] == NULL)
 	{
 
@@ -33,13 +35,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		if (ht->array[index]->next == NULL)
+		head = ht->array[index];
+
+		if (head->next == NULL)
 		{
-			node->next = ht->array[index];
-			ht->array[index] = node;
-			return (1);
+			ht->array[index]->value = strdup(value);
+			return (0);
 		}
-		ht->array[index]->value = strdup(value);
+
+		while (strcmp(key, head->key) != 0 && head->next != NULL)
+		{
+			head = head->next;
+		}
+		if (head->next != NULL)
+		{
+			head->value = strdup(value);
+			free(node->key);
+			free(node->value);
+			free(node);
+		}
 	}
 	return (1);
 }
