@@ -1,8 +1,8 @@
 /**
  * hash_djb2 - djb2 algorithm function
  * @str: key string
- * Return: 
-*/
+ * Return: int hash value
+ */
 unsigned long int hash_djb2(const unsigned char *str)
 {
 	unsigned long int hash;
