@@ -24,35 +24,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	index = key_index((const unsigned char *)newKey, ht->size);
 
-	if (ht->array[index] == NULL)
+	head = ht->array[index];
+	while (head != NULL)
 	{
-		node = malloc(sizeof(hash_node_t));
-		if (node == NULL)
-			return (0);
-
-		node->key = newKey;
-		node->value = strdup(value);
-		node->next = NULL;
-		ht->array[index] = node;
-		return (1);
-	}
-	else
-	{
-		head = ht->array[index];
-		while (head != NULL)
+		if (strcmp(key, head->key) == 0)
 		{
-			if (strcmp(key, head->key) == 0)
-			{
-				free(head->value);
-				head->value = strdup(value);
-				if (head->value == NULL)
-					return (0);
+			free(head->value);
+			head->value = strdup(value);
+			if (head->value == NULL)
+				return (0);
 
-				return (1);
-			}
-
-			head = head->next;
+			return (1);
 		}
+
+		head = head->next;
 	}
-	return (0);
+
+	node = malloc(sizeof(hash_node_t));
+	if (node == NULL)
+		return (0);
+
+	node->key = newKey;
+	node->value = strdup(value);
+	node->next = NULL;
+	ht->array[index] = node;
+	return (1);
 }
