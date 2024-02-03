@@ -18,7 +18,7 @@ void free_list(hash_node_t *head)
     head->next = NULL;
     free(head->value);
     free(head->key);
-
+    
     free(head);
 }
 
