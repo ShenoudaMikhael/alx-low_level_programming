@@ -4,4 +4,4 @@ OBJ = main.o
 SRC = main.c
 NAME = school
 myfun: $(OBJ) school.o
-	$(CC) $(OBJ)  school.o -o $(NAME)
+	$(CC) $(OBJ) school.o -o $(NAME)
