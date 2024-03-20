@@ -3,5 +3,5 @@ CC = gcc
 OBJ = main.o
 SRC = main.c
 NAME = school
-myfun: $(NAME)
-	$(CC) $(OBJ) -o $(NAME)
+myfun: $(OBJ) school.o
+	$(CC) $(OBJ)  school.o -o $(NAME)
