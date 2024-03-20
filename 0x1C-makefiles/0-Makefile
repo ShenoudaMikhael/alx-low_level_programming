@@ -1,0 +1,4 @@
+all: myfun
+
+myfun:
+	gcc main.c school.c -o school
