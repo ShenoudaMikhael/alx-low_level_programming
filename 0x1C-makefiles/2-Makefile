@@ -1,0 +1,15 @@
+all: myfun myfunb myfunc
+
+CC = gcc
+OBJ = main.o
+SRC = main.c
+NAME = school
+myfun:
+	${CC} 	-c -o ${OBJ} ${SRC}
+OBJ = school.o
+myfunb:
+	${CC} 	-c -o ${OBJ} ${SRC}
+OBJ = main.o school.o
+
+myfunc:
+	${CC} ${OBJ} -o ${NAME}
