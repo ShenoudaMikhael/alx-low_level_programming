@@ -3,5 +3,5 @@ CC = gcc
 OBJ = main.o
 SRC = main.c
 NAME = school
-myfun: $(OBJ)
+myfun: $(NAME)
 	$(CC) $(OBJ) -o $(NAME)
