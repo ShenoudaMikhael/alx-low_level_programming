@@ -10,10 +10,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean:
-	rm -f *~ school
+	rm -f *~$(NAME)
 oclean:
-	rm -f main.o school.o
-fclean:
-	rm -f *~ school
-re:
-	rm -f main.o school.o
+	rm -f $(OBJ)
+fclean: clean oclean
+re: fclean all
