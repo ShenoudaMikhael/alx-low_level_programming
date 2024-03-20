@@ -5,8 +5,11 @@
 def island_perimeter(grid):
     """return island perimeter"""
     height = len(grid)
+    if height == 0:
+        return 0
     width = len(grid[0])
-
+    if width == 0:
+        return 0
     ccc = []
     for h in range(0, height):
         for w in range(0, width):
