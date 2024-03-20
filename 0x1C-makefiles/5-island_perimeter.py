@@ -21,9 +21,11 @@ def island_perimeter(grid):
     p = 0
     for q in ccc:
         cp = 4
-        if grid[q[0] - 1][q[1]] == 1:
-            cp -= 2
-        if grid[q[0]][q[1] - 1] == 1:
-            cp -= 2
+        if q[0] - 1 >= 0:
+            if grid[q[0] - 1][q[1]] == 1:
+                cp -= 2
+        if q[1] - 1 >= 0:
+            if grid[q[0]][q[1] - 1] == 1:
+                cp -= 2
         p += cp
     return p
