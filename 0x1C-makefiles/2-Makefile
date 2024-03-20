@@ -1,7 +1,6 @@
-all: myfun
 CC = gcc
 OBJ = main.o
 SRC = main.c
 NAME = school
-myfun: $(OBJ) school.o
+all: $(OBJ) school.o
 	$(CC) $(OBJ) school.o -o $(NAME)
