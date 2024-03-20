@@ -5,7 +5,7 @@
 def island_perimeter(grid):
     """return island perimeter"""
     if not grid:
-        return 0
+        return
     height = len(grid)
     if height == 0:
         return 0
@@ -18,16 +18,13 @@ def island_perimeter(grid):
             if grid[h][w] == 1:
                 ccc.append((h, w))
 
+    print(ccc)
     p = 0
     for q in ccc:
         cp = 4
         if grid[q[0] - 1][q[1]] == 1:
-            cp -= 1
-        if grid[q[0] + 1][q[1]] == 1:
-            cp -= 1
-        if grid[q[0]][q[1] + 1] == 1:
-            cp -= 1
+            cp -= 2
         if grid[q[0]][q[1] - 1] == 1:
-            cp -= 1
+            cp -= 2
         p += cp
     return p
