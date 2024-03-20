@@ -1,0 +1,6 @@
+all: myfun
+
+CC = gcc
+SRC = main.c school.c
+myfun:
+	${CC} ${SRC} -o school
