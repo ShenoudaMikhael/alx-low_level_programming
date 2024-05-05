@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "search_algos.h"
 /**
  * linear_search - a function that searches for a
  * value in a sorted array of integers using
