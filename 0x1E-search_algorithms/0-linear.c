@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * binary_search - a function that searches for a
+ * linear_search - a function that searches for a
  * value in a sorted array of integers using
  * the Binary search algorithm
  * @array: array to search
  * @size: array size
  * @value: value to find
- *
+ * @Return: i or -1
  */
 int linear_search(int *array, size_t size, int value)
 {
