@@ -52,6 +52,8 @@ int rec_binary_search(int *arr, size_t low, size_t high, int val)
 		return (rec_binary_search(arr, mid + 1, high, val));
 	else
 		return (rec_binary_search(arr, low, mid - 1, val));
+
+	return (-1);
 }
 
 /**
