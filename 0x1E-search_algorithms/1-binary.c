@@ -18,7 +18,7 @@ void print_array(int *a, size_t low, size_t n)
 	{
 		printf("%d", a[i]);
 		i++;
-		if (i == n)
+		if (i == n+1)
 		{
 			break;
 		}
@@ -44,15 +44,14 @@ int binary_search(int *array, size_t size, int value)
 		return (-1);
 
 	l = 0;
-	h = size;
+	h = size - 1;
 	while (l <= h)
 	{
 
 		m = (l + (h)) / 2;
 
-		if (m == h)
-			return (-1);
 		print_array(array, l, h);
+	
 		if (value == array[m])
 			return (m);
 		if (value > array[m])
