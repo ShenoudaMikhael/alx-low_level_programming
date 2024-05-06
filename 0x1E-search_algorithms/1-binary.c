@@ -14,7 +14,7 @@ void print_array(int *a, size_t low, size_t n)
 	i = low;
 
 	printf("Searching in array: ");
-	while (i < n)
+	while (i <= n)
 	{
 		printf("%d", a[i]);
 		i++;
@@ -25,35 +25,6 @@ void print_array(int *a, size_t low, size_t n)
 		printf(", ");
 	}
 	printf("\n");
-}
-/**
- * rec_binary_search - a function that searches for a value in
- * a sorted array of integers using the Binary search algorithm
- * @arr: array to search
- * @high: end index
- * @low: start
- * @val: value to find
- * Return: index of element or -1
- */
-int rec_binary_search(int *arr, size_t low, size_t high, int val)
-{
-
-	size_t mid;
-
-	if (low > high)
-		return (-1);
-	if (high != low)
-		print_array(arr, low, high);
-
-	mid = low + (high - low - 1) / 2;
-	if (arr[mid] == val)
-		return (mid);
-	else if (arr[mid] < val)
-		return (rec_binary_search(arr, mid + 1, high, val));
-	else
-		return (rec_binary_search(arr, low, mid - 1, val));
-
-	return (-1);
 }
 
 /**
@@ -73,18 +44,21 @@ int binary_search(int *array, size_t size, int value)
 		return (-1);
 
 	l = 0;
-	h = size - 1;
-	while (l < h)
+	h = size;
+	while (l <= h)
 	{
-		m = l + h / 2;
-		print_array(array, l, h);
 
+		m = (l + (h)) / 2;
+
+		if (m == h)
+			return (-1);
+		print_array(array, l, h);
 		if (value == array[m])
-			return m;
-		if (array[m] > value)
-			h = m - 1;
-		else
+			return (m);
+		if (value > array[m])
 			l = m + 1;
+		else
+			h = m - 1;
 	}
-	return -1;
+	return (-1);
 }
