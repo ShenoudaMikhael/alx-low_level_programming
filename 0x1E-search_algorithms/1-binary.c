@@ -64,5 +64,7 @@ int rec_binary_search(int *arr, size_t low, size_t high, int val)
  */
 int binary_search(int *array, size_t size, int value)
 {
+	if (array == NULL)
+		return (-1);
 	return (rec_binary_search(array, 0, size, value));
 }
