@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.embeddedhtml": "html",
+        "snippets": "plaintext",
         "stdio.h": "c",
         "main.h": "c",
         "function_pointers.h": "c",
@@ -17,6 +18,7 @@
         "iosfwd": "c",
         "new": "c",
         "ostream": "c",
-        "streambuf": "c"
+        "streambuf": "c",
+        "algorithm": "c"
     }
 }
